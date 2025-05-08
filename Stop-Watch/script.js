@@ -1,4 +1,5 @@
 let [seconds,minutes,hours] =[0,0,0];
+let lap = document.getElementById("lap");
 let displayTime =document.getElementById("displayTime");
 let timer =null;
 function stopwatch(){
@@ -26,9 +27,11 @@ function watchStart(){
 }
 function watchStop(){
     clearInterval(timer);
+    timer =null;
 }
 function watchRest(){
     clearInterval(timer);
     [seconds,minutes,hours] =[0,0,0];
     displayTime.innerHTML="00:00:00";
+    lap.innerHTML="";
 }
